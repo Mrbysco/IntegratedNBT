@@ -16,6 +16,7 @@ import org.cyclops.integrateddynamics.core.evaluate.variable.ValueHelpers;
 import org.cyclops.integrateddynamics.core.evaluate.variable.ValueTypeNbt.ValueNbt;
 import org.cyclops.integrateddynamics.core.evaluate.variable.ValueTypes;
 import org.cyclops.integrateddynamics.core.helper.L10NValues;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -43,6 +44,22 @@ public class NBTExtractionOperator implements IOperator {
     @Override
     public ResourceLocation getUniqueName() {
         return UNIQUE_NAME;
+    }
+
+    @Override
+    public String getInteractName() {
+        return "nbt_extraction";
+    }
+
+    @Nullable
+    @Override
+    public String getGlobalInteractNamePrefix() {
+        return null;
+    }
+
+    @Override
+    public boolean shouldAlsoPrefixLocalScope() {
+        return false;
     }
 
     @Override
